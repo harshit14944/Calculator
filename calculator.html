@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      function display(val){
+
+       document.getElementById('result').value += val;
+
+       return val;
+
+      }
+
+      function solve(){
+
+           let x = document.getElementById('result').value;
+
+      let y = eval(x);
+
+     document.getElementById('result').value = y;
+
+     return y
+      }
+
+
+       function clearScreen(){
+
+        document.getElementById('result').value = '';
+
+        }
+    </script>
+
+    <style>
+       body{
+       height: 100%;
+       width: 100%;
+      align-items: center;
+       }
+       .container{
+          display: block;
+          text-align: center;
+          flex-direction: column;
+          background-color: rgb(27, 24, 24);
+          height: 520px;
+          width: 350px;
+          border: solid;
+          border-radius: 15px;
+         
+       }
+      
+       .row{
+        margin: 5px;
+    
+       }
+       .button{
+         display:inline-block;
+         padding: 10px;
+         height: 70px;
+         width: 70px;
+         font-size: 25px;
+         cursor: pointer;
+         border-radius: 20px ;
+         animation: 2s;
+         background-color: black;
+         color: white;
+   
+       }
+       .button:hover {
+         background-color: rgb(88, 197, 192);
+         border: 2px solid aqua;
+       }
+       .screen{
+        display: flex;
+        width: 300px;
+        height: 80px;
+        text-align:center;
+        margin: 20px;
+        font-size: 25px;
+        border-radius: 15px;
+
+    
+       }
+       .clear
+       {
+        display:inline-block;
+         padding: 10px;
+         height: 70px;
+         width: 70px;
+         font-size: 25px;
+         cursor: pointer;
+         border-radius: 20px ;
+       
+       }
+       .clear:hover {
+         background-color:coral;
+         border: 2px solid aqua;
+       }
+
+       
+      
+    </style>
+</head>
+<body>
+    <div class="cal"><h1>Calculator</h1></div>
+    <div class="container">
+       
+        <div class="row1">
+            <div><input type='text' id='result' class ='screen' style="text-align: right;"></div>
+          <input type="button" value="C" class="clear"  onclick="clearScreen()"></input>
+          <input type="button" value="⌫" class="clear"  onclick="clearScreen('⌫')"></input>
+          <input style="background-color:white;color: black;" type="button" value="%" class="button"  onclick="display('%')"></input>
+          <input style="background-color:white;color: black;" type="button" value="÷" class="button"  onclick="display('÷')"></input>
+          
+        </div>
+        <div class="row">
+            <input type="button" value="7" class="button"  onclick="display('7')"></input>
+            <input type="button" value="8" class="button"  onclick="display('8')"></input>
+            <input type="button" value="9" class="button"  onclick="display('9')"></input>
+            <input style="background-color:white;color: black;"type="button" value="*" class="button"  onclick="display('*')"></input>
+            
+        </div>
+        <div class="row">
+            <input type="button" value="4" class="button"  onclick="display('4')"></input>
+            <input type="button" value="5" class="button"  onclick="display('5')"></input>
+            <input type="button" value="6" class="button"  onclick="display('6')"></input>
+            <input style="background-color:white;color: black;" type="button" value="-" class="button"  onclick="display('-')"></input>
+           
+        </div>
+        <div class="row">
+            <input type="button" value="1" class="button"  onclick="display('1')"></input>
+            <input type="button" value="2" class="button"  onclick="display('2')"></input>
+            <input type="button" value="3" class="button"  onclick="display('3')"></input>
+            <input style="background-color:white;color: black;" type="button" value="+" class="button"  onclick="display('+')"></input>
+            
+        </div>
+        <div class="row">
+            <input type="button" value="00" class="button"  onclick="display('00')"></input>
+            <input type="button" value="0" class="button"  onclick="display('0')"></input>
+            <input type="button" value="." class="button"  onclick="display('.')"></input>
+            <input style="background-color:rgb(241, 166, 24);" type="button" value= "=" class="button equal-sign" onClick="solve()"></input>
+        
+        </div>
+       
+    </div>
+</body>
+</html>
